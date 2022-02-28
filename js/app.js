@@ -23,7 +23,7 @@ const displayPhone = phones => {
         console.log(phone);
         const div = document.createElement('div');
         div.innerHTML = `
-                <div class="rounded-lg shadow-lg bg-white max-w-sm text-center bg-teal-300">
+                <div class="rounded-lg shadow-lg bg-white max-w-sm text-center bg-teal-200">
                     <h4 class="text-gray-900 text-3xl font-medium mb-2">
                      ${phone.brand}
                      </h4>
