@@ -29,10 +29,11 @@ const displayError = error => {
 const displayPhone = phones => {
     // console.log(phones);
     const searchResult = document.getElementById('search-result');
+    const first20Phones = phones.slice(0, 20);
     // searchResult clean;
     searchResult.textContent = '';
 
-    phones.forEach(phone => {
+    first20Phones.forEach(phone => {
         // console.log(phone);
         const div = document.createElement('div');
         div.innerHTML = `
@@ -88,7 +89,7 @@ const displayPhoneDetail = specifications => {
                    <p class="text-gray-900 text-sm font-medium mb-2">Memory: ${specifications.mainFeatures.memory}</p>
                    <p class="text-gray-900 text-sm font-medium mb-2">Storage: ${specifications.mainFeatures.storage}</p>
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Sensors</h5>
-                   <p class="text-gray-900 text-sm font-medium mb-2">${specifications.mainFeatures.sensors}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2"> ${specifications.mainFeatures.sensors}</p>
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Others </h5>
                    <p class="text-gray-900 text-sm font-medium mb-2">Bluetooth: ${specifications.others.Bluetooth}</p>
                    <p class="text-gray-900 text-sm font-medium mb-2">GPS: ${specifications.others.GPS}</p>
