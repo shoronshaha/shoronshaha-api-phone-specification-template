@@ -1,12 +1,22 @@
+// error message display none
+
 document.getElementById('error-message').style.display = 'none';
 document.getElementById('error2-message').style.display = 'none';
+
+// search box function
+
 const searchPhone = () => {
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
+
     // clear data
     searchField.value = '';
+
     document.getElementById('error-message').style.display = 'none';
     document.getElementById('error2-message').style.display = 'none';
+
+    // error handelar control
+
     if (searchText == '') {
         document.getElementById('error-message').style.display = 'block';
     }
@@ -21,20 +31,22 @@ const searchPhone = () => {
     }
 }
 
+// error handeler function
 const displayError = error => {
     console.log(error);
     document.getElementById('error2-message').style.display = 'block';
 }
 
+// display search results phone details 
+
 const displayPhone = phones => {
-    // console.log(phones);
     const searchResult = document.getElementById('search-result');
     const first20Phones = phones.slice(0, 20);
+
     // searchResult clean;
     searchResult.textContent = '';
 
     first20Phones.forEach(phone => {
-        // console.log(phone);
         const div = document.createElement('div');
         div.innerHTML = `
                 <div class="rounded-lg shadow-lg bg-white max-w-sm text-center bg-teal-200">
@@ -57,10 +69,10 @@ const displayPhone = phones => {
     })
 };
 
+// display phone specification details 
+
 const SpecificationsPhone = phoneId => {
-    // console.log(phone);
     const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`
-    // console.log(url);
 
     fetch(url)
         .then(res => res.json())
@@ -68,7 +80,6 @@ const SpecificationsPhone = phoneId => {
 }
 
 const displayPhoneDetail = specifications => {
-    // console.log(specifications);
     const phoneDetail = document.getElementById('phone-details');
     const div = document.createElement('div');
     div.innerHTML = `
