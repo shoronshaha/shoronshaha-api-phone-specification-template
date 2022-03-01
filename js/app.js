@@ -75,7 +75,7 @@ const displayPhoneDetail = specifications => {
 
        <div class="flex flex-col md:flex-row md:max-w-full rounded-lg bg-white shadow-lg bg-teal-100 ">
                    
-               <img class="w-100 md:h-auto object-cover md:w-80 rounded-t-lg md:rounded-none md:rounded-l-lg"
+               <img class=" w-full h-96 md:h-auto object-cover md:w-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                    src="${specifications.image}" alt="" />
                <div class="p-6 flex flex-col justify-start">
                     <h4 class="text-gray-900 text-3xl font-medium mb-2">
@@ -91,12 +91,12 @@ const displayPhoneDetail = specifications => {
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Sensors</h5>
                    <p class="text-gray-900 text-sm font-medium mb-2"> ${specifications.mainFeatures.sensors}</p>
                     <h5 class="text-gray-900 text-xl font-medium mb-2">Others </h5>
-                   <p class="text-gray-900 text-sm font-medium mb-2">Bluetooth: ${specifications.others.Bluetooth}</p>
-                   <p class="text-gray-900 text-sm font-medium mb-2">GPS: ${specifications.others.GPS}</p>
-                   <p class="text-gray-900 text-sm font-medium mb-2">NFC: ${specifications.others.NFC}</p>
-                   <p class="text-gray-900 text-sm font-medium mb-2">Radio: ${specifications.others.Radio}</p>
-                   <p class="text-gray-900 text-sm font-medium mb-2">USB: ${specifications.others.USB}</p>
-                   <p class="text-gray-900 text-sm font-medium mb-2">WLAN: ${specifications.others.WLAN}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Bluetooth: ${specifications.others?.Bluetooth}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">GPS: ${specifications.others?.GPS}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">NFC: ${specifications.others?.NFC}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Radio: ${specifications.others?.Radio}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">USB: ${specifications.others?.USB}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">WLAN: ${specifications.others?.WLAN}</p>
 
                </div>
            </div>`;
