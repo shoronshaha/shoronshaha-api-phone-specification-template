@@ -50,27 +50,38 @@ const SpecificationsPhone = phoneId => {
 
     fetch(url)
         .then(res => res.json())
-        .then(phone => displayPhoneDetail(phone.data))
+        .then(phoneId => displayPhoneDetail(phoneId.data))
 }
 
-const displayPhoneDetail = phone => {
-    console.log(phone);
+const displayPhoneDetail = specifications => {
+    console.log(specifications);
+    // specifications.forEach(specification => {
+    //     console.log(specification);
+
+    // })
     const phoneDetail = document.getElementById('phone-details');
     const div = document.createElement('div');
     div.innerHTML = `
-    <div class="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg bg-teal-200">
-                
-            <img class=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
-                src="${phone.image}" alt="" />
-            <div class="p-6 flex flex-col justify-start">
-            <h4 class="text-gray-900 text-3xl font-medium mb-2">
-                     ${phone.brand}
-                </h4>
-                <h5 class="text-gray-900 text-xl font-medium mb-2">${phone.name}</h5>
-                <p class="text-gray-700 text-base mb-4">
 
-                <p class="text-gray-600 text-xs">Last updated 3 mins ago</p>
-            </div>
-        </div>`;
+       <div class="flex flex-col md:flex-row md:max-w-full rounded-lg bg-white shadow-lg bg-teal-100 ">
+                   
+               <img class=" w-half h-120 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
+                   src="${specifications.image}" alt="" />
+               <div class="p-6 flex flex-col justify-start">
+               <h4 class="text-gray-900 text-3xl font-medium mb-2">
+                       Brand: ${specifications.brand}
+                   </h4>
+                   <h5 class="text-gray-900 text-xl font-medium mb-2">Name: ${specifications.name}</h5>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Release Date: ${specifications.releaseDate}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Chipset: ${specifications.mainFeatures.chipSet}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Display Size: ${specifications.mainFeatures.displaySize}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Memory: ${specifications.mainFeatures.memory}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Storage: ${specifications.mainFeatures.storage}</p>
+                   <p class="text-gray-900 text-sm font-medium mb-2">Sensors: ${specifications.mainFeatures.sensors}</p>
+                   
+
+               </div>
+           </div>`;
     phoneDetail.appendChild(div);
 }
+
