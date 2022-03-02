@@ -80,7 +80,12 @@ const SpecificationsPhone = phoneId => {
 }
 
 const displayPhoneDetail = specifications => {
+
     const phoneDetail = document.getElementById('phone-details');
+
+    // replace the previous specification to new one
+    phoneDetail.textContent = '';
+
     const div = document.createElement('div');
     div.innerHTML = `
 
@@ -112,5 +117,7 @@ const displayPhoneDetail = specifications => {
                </div>
            </div>`;
     phoneDetail.appendChild(div);
+
+
 }
 
